@@ -10,7 +10,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-box-sizing: border-box;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -26,50 +26,11 @@ body {
     padding: 0 20px;
 }
 
-/* ================= TOP CONTACT HEADER ================= */
-.top-bar {
-    background-color: rgba(3, 10, 20, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 12px 0;
-}
-
-.top-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.contact-group {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    text-decoration: none;
-}
-
-.contact-item.whatsapp {
-    color: #25d366;
-    font-weight: 600;
-}
-
-.tagline {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    font-style: italic;
-}
-
-/* ================= MAIN NAVIGATION ================= */
+/* ================= NEW INTEGRATED NAVIGATION BAR ================= */
 .main-navbar {
     padding: 20px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(3, 10, 20, 0.9);
 }
 
 .main-navbar .container {
@@ -78,8 +39,13 @@ body {
     align-items: center;
 }
 
+.brand-block {
+    display: flex;
+    flex-direction: column;
+}
+
 .brand-logo {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 800;
     color: #ffffff;
     text-decoration: none;
@@ -88,6 +54,20 @@ body {
 
 .brand-logo span {
     color: var(--gold-primary);
+}
+
+.brand-tagline {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.nav-right-group {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 .nav-links {
@@ -108,9 +88,30 @@ body {
     color: var(--gold-primary);
 }
 
+.nav-contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    font-size: 0.85rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 20px;
+}
+
+.nav-contact-info a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-contact-info .whatsapp-link {
+    color: #25d366;
+    font-weight: 700;
+}
+
 /* ================= HERO CONTENT SECTION ================= */
 .hero-section {
-    padding: 100px 0 60px 0;
+    padding: 80px 0 60px 0;
     text-align: center;
 }
 
@@ -167,14 +168,14 @@ body {
 }
 
 .hero-graphic {
-    margin-top: 60px;
+    margin-top: 50px;
     border-radius: 16px;
     border: 2px solid rgba(255, 255, 255, 0.1);
     max-width: 100%;
     height: auto;
 }
 
-/* ================= TEXT / INTERIOR PAGES ================= */
+/* ================= BUSINESS SECTIONS (ABOUT / PACKAGES) ================= */
 .content-block {
     padding: 60px 0;
 }
@@ -183,102 +184,71 @@ body {
     font-size: 2.2rem;
     margin-bottom: 20px;
     color: #ffffff;
+    border-bottom: 2px solid var(--gold-primary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.content-block h3 {
+    font-size: 1.5rem;
+    color: var(--gold-primary);
+    margin: 25px 0 10px 0;
 }
 
 .content-block p {
     color: var(--text-light);
     font-size: 1.1rem;
     margin-bottom: 20px;
-    max-width: 800px;
+    max-width: 900px;
 }
 
-/* ================= TESTIMONIALS SECTION ================= */
-.testimonials-section {
-    padding: 80px 0;
+.content-list {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.content-list li {
+    margin-bottom: 10px;
+}
+
+/* ================= REAL 5-STAR REVIEWS WIDGET ================= */
+.reviews-summary-section {
+    padding: 60px 0;
     background-color: rgba(4, 13, 26, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.section-header {
     text-align: center;
-    margin-bottom: 50px;
 }
 
-.section-header h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 15px;
-}
-
-.section-header p {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.testimonial-card {
+.rating-widget {
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 40px 30px;
-    border-radius: 12px;
-    position: relative;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 16px;
+    display: inline-block;
+    max-width: 500px;
+    width: 100%;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--gold-primary);
-}
-
-.quote-icon {
-    font-size: 4rem;
-    font-family: serif;
+.stars {
     color: var(--gold-primary);
-    line-height: 1;
-    position: absolute;
-    top: 15px;
-    left: 25px;
-    opacity: 0.15;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-.review-text {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: var(--text-light);
-    margin-bottom: 25px;
-    position: relative;
-    z-index: 1;
-}
-
-.reviewer-info {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 15px;
-}
-
-.reviewer-name {
-    font-size: 1.1rem;
+.rating-score {
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 5px 0;
+    margin-bottom: 5px;
 }
 
-.reviewer-tag {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--gold-primary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.rating-count {
+    color: var(--text-muted);
+    font-size: 0.95rem;
 }
 
-/* ================= STRUCTURAL FOOTER ================= */
+/* ================= FOOTER ================= */
 footer {
     background-color: #030a14;
     padding: 40px 0;
@@ -288,26 +258,33 @@ footer {
     font-size: 0.95rem;
 }
 
-/* ================= MOBILE RESPONSIVENESS PATCH ================= */
-@media (max-width: 768px) {
-    .top-bar .container {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .contact-group {
-        flex-direction: column;
-        gap: 8px;
-    }
-
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 992px) {
     .main-navbar .container {
         flex-direction: column;
         gap: 20px;
+        text-align: center;
     }
+    
+    .nav-right-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-contact-info {
+        align-items: center;
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 10px;
+        width: 100%;
+    }
+}
 
+@media (max-width: 768px) {
     .nav-links {
-        gap: 20px;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .hero-section h1 {
@@ -316,9 +293,5 @@ footer {
 
     .hero-subtitle {
         font-size: 1.1rem;
-    }
-    
-    .section-header h2 {
-        font-size: 1.9rem;
     }
 }
