@@ -5,7 +5,6 @@
     --gold-hover: #b8922f;
     --text-light: #e2e8f0;
     --text-muted: #b0c4de;
-    /* Elegant soft off-white for visual contrast */
     --bg-soft-light: #f8fafc;
     --text-dark: #0f172a;
     --text-dark-muted: #475569;
@@ -30,11 +29,11 @@ body {
     padding: 0 20px;
 }
 
-/* ================= COMPACT MAIN NAVBAR ================= */
+/* ================= SLEEK, FLAT NAVBAR ================= */
 .main-navbar {
-    padding: 15px 0;
+    padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    background-color: rgba(3, 10, 20, 0.95);
+    background-color: #030a14;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -52,11 +51,11 @@ body {
 }
 
 .brand-logo {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: #ffffff;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .brand-logo span {
@@ -64,17 +63,17 @@ body {
 }
 
 .brand-tagline {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 2px;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
 }
 
 .nav-right-group {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-links {
@@ -89,32 +88,43 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: color 0.3s ease;
+    transition: color 0.2s;
 }
 
 .nav-links a:hover, .nav-links a.active {
     color: var(--gold-primary);
 }
 
-/* Compact Green WhatsApp Button */
-.nav-chat-btn {
+/* Clear Call-to-Actions */
+.nav-action-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background-color: #25d366;
     color: #ffffff !important;
     padding: 8px 16px;
-    border-radius: 50px;
+    border-radius: 6px;
     font-weight: 700;
     font-size: 0.85rem;
+    text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-.nav-chat-btn:hover {
+.btn-whatsapp {
+    background-color: #25d366;
+}
+
+.btn-whatsapp:hover {
     background-color: #20ba5a;
-    transform: translateY(-1px);
+}
+
+.btn-portal {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-portal:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .nav-email-text {
@@ -129,32 +139,31 @@ body {
     color: #ffffff;
 }
 
-/* ================= HERO CONTENT AREA ================= */
+/* ================= HERO ZONE ================= */
 .hero-section {
-    padding: 60px 0;
+    padding: 70px 0;
     text-align: center;
 }
 
 .promo-pill {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     border: 1px solid var(--gold-primary);
-    padding: 8px 20px;
+    padding: 6px 16px;
     border-radius: 50px;
     color: var(--gold-primary);
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     background: rgba(212, 175, 55, 0.05);
 }
 
 .hero-section h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     letter-spacing: -0.5px;
 }
 
@@ -163,66 +172,54 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--text-light);
-    max-width: 750px;
-    margin: 0 auto 30px auto;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
 }
 
-/* Restored Flyer Styling */
-.hero-graphic {
-    margin-top: 40px;
-    border-radius: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    max-width: 100%;
-    max-height: 550px;
-    object-fit: contain;
-    height: auto;
-}
-
-/* ================= DARK AND LIGHT CONTENT BLOCKS ================= */
+/* ================= SECTIONS & BLOCKS ================= */
 .content-block-dark {
-    padding: 80px 0;
+    padding: 70px 0;
     background-color: var(--bg-deep-blue);
     color: #ffffff;
 }
 
-/* Restored Soft Off-White Background Block */
 .content-block-light {
-    padding: 80px 0;
+    padding: 70px 0;
     background-color: var(--bg-soft-light);
     color: var(--text-dark);
 }
 
 .section-title-block {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .section-title-block h2 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     font-weight: 800;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .content-block-dark .section-title-block h2 { color: #ffffff; }
 .content-block-light .section-title-block h2 { color: var(--text-dark); }
 
 .section-title-block p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 .content-block-dark .section-title-block p { color: var(--text-muted); }
 .content-block-light .section-title-block p { color: var(--text-dark-muted); }
 
-/* Layout Grid Layouts */
+/* Flexible Grid Systems */
 .dual-layout-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    gap: 35px;
 }
 
 .layout-column h3 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     margin-bottom: 20px;
     border-left: 4px solid var(--gold-primary);
     padding-left: 12px;
@@ -230,12 +227,10 @@ body {
 .content-block-dark .layout-column h3 { color: var(--gold-primary); }
 .content-block-light .layout-column h3 { color: var(--bg-deep-blue); }
 
-/* Information Card Modules */
 .info-card {
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
+    padding: 22px;
+    border-radius: 8px;
+    margin-bottom: 16px;
 }
 
 .content-block-dark .info-card {
@@ -246,49 +241,48 @@ body {
 .content-block-light .info-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
 .info-card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
 }
 .content-block-dark .info-card h4 { color: #ffffff; }
 .content-block-light .info-card h4 { color: var(--bg-deep-blue); }
 
 .info-card p {
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 .content-block-dark .info-card p { color: var(--text-light); }
 .content-block-light .info-card p { color: var(--text-dark-muted); }
 
-/* Timeline Modules */
+/* Processing Pipeline Cards */
 .tracking-timeline {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    gap: 20px;
 }
 
 .timeline-box {
     border-left: 3px solid var(--gold-primary);
     padding: 20px;
     background: rgba(255, 255, 255, 0.02);
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-radius: 0 6px 6px 0;
 }
 
 .timeline-box .step-num {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 900;
     color: rgba(214, 175, 55, 0.3);
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .timeline-box h4 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: #ffffff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .timeline-box p {
@@ -296,21 +290,20 @@ body {
     font-size: 0.9rem;
 }
 
-/* ================= INTERACTIVE WORKSPACE PORTAL FORMS ================= */
+/* ================= INTERACTIVE ENTRANCE PORTAL ================= */
 .auth-container {
-    max-width: 480px;
-    margin: 40px auto;
+    max-width: 440px;
+    margin: 20px auto;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 35px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 30px;
 }
 
 .auth-tabs {
     display: flex;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .auth-tab-btn {
@@ -318,11 +311,10 @@ body {
     background: none;
     border: none;
     color: var(--text-muted);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    padding: 12px;
+    padding: 10px;
     cursor: pointer;
-    transition: color 0.2s;
     text-align: center;
 }
 
@@ -332,28 +324,26 @@ body {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .form-group label {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-muted);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .form-group input, .form-group select {
     width: 100%;
-    padding: 12px 16px;
-    background: rgba(3, 10, 20, 0.5);
+    padding: 10px 14px;
+    background: #030a14;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
+    border-radius: 6px;
     color: #ffffff;
-    font-size: 1rem;
-    transition: border-color 0.2s;
+    font-size: 0.95rem;
 }
 
 .form-group input:focus, .form-group select:focus {
@@ -366,22 +356,16 @@ body {
     background: var(--gold-primary);
     color: #000000;
     border: none;
-    padding: 14px;
-    font-size: 1rem;
+    padding: 12px;
+    font-size: 0.95rem;
     font-weight: 700;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.2s;
-    margin-top: 10px;
 }
 
-.submit-form-btn:hover {
-    background-color: var(--gold-hover);
-}
-
-/* ================= REVIEWS WIDGET ================= */
+/* ================= TRUST WIDGET ================= */
 .reviews-summary-section {
-    padding: 60px 0;
+    padding: 50px 0;
     background-color: rgba(4, 13, 26, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
@@ -390,110 +374,109 @@ body {
 .rating-widget {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 40px;
-    border-radius: 16px;
+    padding: 30px;
+    border-radius: 12px;
     display: inline-block;
-    max-width: 520px;
+    max-width: 500px;
     width: 100%;
 }
 
 .stars {
     color: var(--gold-primary);
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 5px;
 }
 
 .rating-score {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    margin-bottom: 5px;
 }
 
 .rating-count {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 /* ================= FOOTER ================= */
 footer {
     background-color: #030a14;
-    padding: 40px 0;
+    padding: 30px 0;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-/* ================= 📱 RE-ENGINEERED COMPACT MOBILE VIEW PATCH ================= */
-@media (max-width: 992px) {
+/* ================= 📱 ULTRA-COMPACT MOBILE LAYOUT ENGINE ================= */
+@media (max-width: 768px) {
     .main-navbar {
-        padding: 10px 0;
+        padding: 8px 0;
     }
     
+    /* Puts Logo Left, Actions Right on one clean horizontal baseline */
     .main-navbar .container {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .brand-logo {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
 
     .brand-tagline {
-        font-size: 0.65rem;
+        font-size: 0.55rem;
+        letter-spacing: 0px;
     }
 
+    /* Bundles links and buttons tightly together without expansion */
     .nav-right-group {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
-        width: 100%;
     }
 
-    /* Standardizes link rows into a sleek line */
     .nav-links {
-        flex-direction: row;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .nav-links a {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
-    /* Scales back button swelling on screens */
-    .nav-chat-btn {
-        padding: 6px 14px;
-        font-size: 0.8rem;
+    /* Hides plain text links and transforms them into compact buttons */
+    .nav-links li:nth-child(3) {
+        display: none; 
+    }
+
+    .nav-action-btn {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        border-radius: 4px;
     }
 
     .nav-email-text {
-        border-left: none;
-        padding-left: 0;
-        font-size: 0.8rem;
-        margin-top: -2px;
+        display: none; /* Keeps screen clean */
     }
-}
 
-@media (max-width: 768px) {
     .hero-section {
-        padding: 40px 0;
+        padding: 35px 0;
     }
 
     .hero-section h1 {
-        font-size: 2.1rem;
+        font-size: 2rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 25px;
     }
 
     .section-title-block h2 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
 
     .dual-layout-grid, .tracking-timeline {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }

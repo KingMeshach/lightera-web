@@ -17,10 +17,11 @@
             <div class="nav-right-group">
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="portal.html" class="active">Applicant's Portal</a></li>
-                    <li><a href="https://wa.me/2347073802685" target="_blank" class="nav-chat-btn">💬 Chat With Us</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portal.html" class="active">Portal</a></li>
                 </ul>
+                <a href="portal.html" class="nav-action-btn btn-portal">🔑 Portal</a>
+                <a href="https://wa.me/2347073802685" target="_blank" class="nav-action-btn btn-whatsapp">💬 WhatsApp</a>
                 <a href="mailto:info@lighteraedu.com" class="nav-email-text">✉️ info@lighteraedu.com</a>
             </div>
         </div>
@@ -33,14 +34,12 @@
                 <p>Register or log into your central dashboard to track your live application stages in real-time.</p>
             </div>
 
-            <!-- Registration and Login Interface Form -->
             <div class="auth-container">
                 <div class="auth-tabs">
                     <button class="auth-tab-btn active" onclick="toggleAuth('register')">Create Account</button>
                     <button class="auth-tab-btn" onclick="toggleAuth('login')">Sign In</button>
                 </div>
 
-                <!-- Registration Workflow Form Form -->
                 <form id="register-form" onsubmit="event.preventDefault(); alert('Account successfully initialized. LightEra verification processing token active.');">
                     <div class="form-group">
                         <label>Full Legal Name</label>
@@ -67,7 +66,6 @@
                     <button type="submit" class="submit-form-btn">Initialize Registration</button>
                 </form>
 
-                <!-- Login Interface Form (Hidden by default) -->
                 <form id="login-form" style="display: none;" onsubmit="event.preventDefault(); alert('Dashboard profile synchronization successful.');">
                     <div class="form-group">
                         <label>Applicant Email</label>
