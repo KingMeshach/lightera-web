@@ -4,211 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LightEra International Admissions & Scholarships</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --navy-deep: #061325;
-            --navy-medium: #0B2240;
-            --navy-light: #16365C;
-            --navy-card: #0e2a4e; /* New refined color for service cards */
-            --gold-primary: #D4AF37;
-            --gold-glow: #F3E5AB;
-            --white: #FFFFFF;
-            --slate-light: #F8FAFC;
-            --text-main: #1E293B;
-            --text-muted: #64748B;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--slate-light); color: var(--text-main); overflow-x: hidden; padding-top: 140px; }
-
-        /* Navigation */
-        .top-mini-bar { background: #030a14; color: rgba(255,255,255,0.7); font-size: 0.85rem; padding: 10px 10%; display: flex; justify-content: space-between; position: fixed; top: 0; width: 100%; z-index: 1001; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .top-mini-bar .meta-links { display: flex; gap: 20px; align-items: center; }
-        .top-mini-bar .meta-links a { color: rgba(255,255,255,0.7); text-decoration: none; }
-        .top-mini-bar .whatsapp-highlight { color: #25D366 !important; font-weight: 600; }
-        
-        .main-navbar { background: rgba(6, 19, 37, 0.98); backdrop-filter: blur(10px); position: fixed; top: 37px; width: 100%; z-index: 1000; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(212, 175, 55, 0.2); }
-        .brand-logo { color: var(--white); font-size: 1.7rem; font-weight: 800; letter-spacing: 2px; text-decoration: none; }
-        .brand-logo span { color: var(--gold-primary); }
-        
-        .nav-tabs { display: flex; gap: 20px; list-style: none; align-items: center; }
-        .nav-tabs a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; font-weight: 600; padding: 8px 4px; border-bottom: 2px solid transparent; transition: all 0.3s; }
-        .nav-tabs a:hover, .nav-tabs a.active { color: var(--gold-primary); border-bottom-color: var(--gold-primary); }
-        
-        /* Button Styles */
-        .portal-btn { background: var(--white) !important; color: var(--navy-deep) !important; padding: 10px 22px !important; border-radius: 50px; font-weight: 700 !important; border: 2px solid var(--gold-primary); }
-        .chat-us-btn { background: #25D366 !important; color: var(--white) !important; padding: 10px 22px !important; border-radius: 50px; font-weight: 700 !important; border: none !important; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2); transition: transform 0.2s; }
-        .chat-us-btn:hover { background: #20ba5a !important; transform: translateY(-2px); }
-
-        /* Hero */
-        .hero { background: radial-gradient(circle at 80% 20%, var(--navy-light) 0%, var(--navy-deep) 100%); padding: 90px 10%; min-height: 70vh; display: flex; align-items: center; }
-        .hero-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; width: 100%; align-items: center; }
-        @media (max-width: 992px) { .hero-layout { grid-template-columns: 1fr; text-align: center; } }
-        
-        .hero-content { max-width: 700px; }
-        
-        /* Enlarged Top Badge */
-        .hero-badge { background: rgba(214, 175, 87, 0.18); border: 1.5px solid var(--gold-primary); color: var(--gold-glow); padding: 10px 22px; border-radius: 50px; font-size: 1.05rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 25px; box-shadow: 0 0 15px rgba(214, 175, 87, 0.1); }
-        
-        .hero h1 { color: var(--white); font-size: 3.4rem; line-height: 1.2; font-weight: 800; margin-bottom: 25px; letter-spacing: -1px; }
-        .hero h1 span { color: var(--gold-primary); }
-        .hero p { color: rgba(255, 255, 255, 0.85); font-size: 1.15rem; margin-bottom: 35px; line-height: 1.6; }
-
-        /* Flyer Container */
-        .flyer-showcase { background: var(--white); border-radius: 16px; padding: 10px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); border: 2px solid var(--gold-primary); overflow: hidden; display: flex; justify-content: center; transition: transform 0.3s; }
-        .flyer-showcase:hover { transform: scale(1.02); }
-        .flyer-showcase img { width: 100%; height: auto; border-radius: 10px; object-fit: contain; max-height: 550px; }
-
-        /* Main Content Stream & Premium Dark Cards */
-        .main-layout { max-width: 1200px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 40px; }
-        @media (max-width: 992px) { .main-layout { grid-template-columns: 1fr; } }
-
-        /* Overhauled Premium Service Wrapper to Dark Canvas */
-        .section-card { background: var(--navy-medium); border-radius: 24px; padding: 45px; box-shadow: 0 20px 40px rgba(6, 19, 37, 0.15); border: 1px solid rgba(255,255,255,0.05); }
-        .section-card h2 { font-size: 2rem; color: var(--white); margin-bottom: 35px; display: flex; align-items: center; gap: 15px; font-weight: 800; }
-        .section-card h2 i { color: var(--gold-primary); }
-
-        .service-grid { display: flex; flex-direction: column; gap: 18px; }
-        
-        /* Brand New Matching Dark Contrast Rows */
-        .service-row { display: flex; gap: 20px; padding: 22px; border-radius: 16px; background: var(--navy-card); border-left: 5px solid var(--gold-primary); transition: transform 0.2s, background 0.2s; }
-        .service-row:hover { transform: translateX(5px); background: rgba(22, 54, 92, 0.6); }
-        
-        .service-icon { background: rgba(214, 175, 55, 0.1); color: var(--gold-primary); width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; shrink: 0; }
-        .service-info h3 { font-size: 1.2rem; color: var(--white); margin-bottom: 6px; font-weight: 700; }
-        .service-info p { color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; line-height: 1.4; }
-
-        /* Destinations Side Panel */
-        .destination-panel { background: var(--navy-deep); border-radius: 24px; padding: 40px; color: var(--white); align-self: start; border: 2px solid rgba(214, 175, 55, 0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
-        .destination-panel h2 { font-size: 1.6rem; margin-bottom: 30px; color: var(--gold-primary); font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
-        .dest-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-        .dest-item { display: flex; align-items: center; gap: 15px; padding: 15px; background: rgba(255, 255, 255, 0.04); border-radius: 12px; font-weight: 600; transition: background 0.2s; }
-        .dest-item:hover { background: rgba(214, 175, 55, 0.08); }
-        .dest-item i { color: var(--gold-primary); font-size: 1.1rem; }
-
-        /* Call To Action Banner */
-        .cta-card { background: linear-gradient(135deg, var(--navy-medium) 0%, var(--navy-deep) 100%); border-radius: 24px; padding: 55px; text-align: center; margin: 60px auto; max-width: 1200px; border: 2px solid var(--gold-primary); box-shadow: 0 25px 50px rgba(6, 19, 37, 0.3); }
-        .cta-card h2 { color: var(--white); font-size: 2.2rem; margin-bottom: 20px; font-weight: 800; }
-        .cta-card p { color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-bottom: 30px; }
-        .action-button { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #E6C657 0%, var(--gold-primary) 100%); color: var(--navy-deep); text-decoration: none; padding: 16px 45px; font-weight: 700; border-radius: 50px; box-shadow: 0 5px 15px rgba(214, 175, 55, 0.3); transition: transform 0.2s; }
-        .action-button:hover { transform: translateY(-2px); }
-
-        footer { background: var(--navy-deep); color: rgba(255, 255, 255, 0.4); text-align: center; padding: 35px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); }
-    </style>
+    <!-- External Uniform Stylesheet Link -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Mini Bar -->
-    <div class="top-mini-bar">
-        <div><i class="fa-solid fa-graduation-cap"></i> Your Pathway to Global Education & Funding</div>
-        <div class="meta-links">
-            <span><i class="fa-solid fa-clock"></i> Always Open</span>
-            <a href="mailto:info@lighteraedu.com"><i class="fa-solid fa-envelope"></i> info@lighteraedu.com</a>
-            <a href="https://wa.me/2347073802685?text=Hello%20LightEra%2C%20I%20want%20to%20book%20a%20free%20consultation." target="_blank" class="whatsapp-highlight">
-                <i class="fa-brands fa-whatsapp"></i> Free Consultation: +234 707 380 2685
-            </a>
+    <!-- Top Contact Strip -->
+    <div class="top-bar">
+        <div class="container">
+            <span class="tagline">Your Pathway to Global Education & Funding</span>
+            <div class="contact-group">
+                <span class="contact-item">🕒 Always Open</span>
+                <a href="mailto:info@lighteraedu.com" class="contact-item">✉️ info@lighteraedu.com</a>
+                <a href="https://wa.me/2347073802685" target="_blank" class="contact-item whatsapp">💬 Free Consultation: +234 707 380 2685</a>
+            </div>
         </div>
     </div>
 
     <!-- Main Navigation Bar -->
     <nav class="main-navbar">
-        <a href="index.html" class="brand-logo">LIGHTERA<span>.</span></a>
-        <ul class="nav-tabs">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="portal.html" class="portal-btn"><i class="fa-solid fa-user-shield"></i> Applicant's Portal</a></li>
-            <li><a href="https://wa.me/2347073802685?text=Hello%20LightEra%2C%20I%20have%20some%20questions%20about%20your%20admissions%20packages." target="_blank" class="chat-us-btn"><i class="fa-brands fa-whatsapp"></i> Chat With Us</a></li>
-        </ul>
+        <div class="container">
+            <a href="index.html" class="brand-logo">LIGHT<span>ERA</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="portal.html">Applicant Portal</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <!-- Hero Showcase Section -->
-    <section class="hero">
-        <div class="hero-layout">
-            <div class="hero-content">
-                <!-- Enlapged / Revamped Top Badge -->
-                <div class="hero-badge"><i class="fa-solid fa-star-of-life"></i> Dreaming of Studying Abroad?</div>
-                <h1>Let's Get You Funded<span>.</span></h1>
-                <p>Don't navigate the complex world of international admissions alone. From university selection to successful visa approval, LightEra handles the stress while you focus on your future.</p>
-                <a href="portal.html" class="action-button"><i class="fa-solid fa-door-open"></i> Enter Applicant Portal</a>
+    <!-- Hero Content -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="promo-pill">✨ Dreaming of Studying Abroad?</div>
+            <h1>Let's Get You <span>Funded</span>.</h1>
+            <p class="hero-subtitle">Don't navigate the complex world of international admissions alone. From university selection to successful visa approval, LightEra handles the stress while you focus on your future.</p>
+            <a href="portal.html" class="cta-btn">🚪 Enter Applicant Portal</a>
+            
+            <!-- Structural branding graphic placeholder -->
+            <img src="1080178419.png" alt="LightEra Digital Banner" class="hero-graphic" width="600">
+        </div>
+    </section>
+
+    <!-- Testimonials / Social Proof Block -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories from Our Global Scholars</h2>
+                <p>See how we've helped ambitious minds secure fully funded opportunities and university placements worldwide.</p>
             </div>
-            <div class="flyer-showcase">
-                <!-- Pointing straight to the corrected '1000178419.png' directory placement -->
-                <img src="1000178419.png" alt="LightEra Premium Admissions Flyer" alt= "LightEra Premium Admissions Flyer">
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">The guidance on my application documents was top-notch. The precision in structuring my research proposal made all the difference in navigating the strict scholarship requirements.</p>
+                    <div class="reviewer-info">
+                        <h4 class="reviewer-name">Chidi O.</h4>
+                        <span class="reviewer-tag">MEXT Scholarship Nominee</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">I was completely overwhelmed by the university application portals in Europe, but LightEra broke it down step-by-step. I got my admission letter faster than I ever expected!</p>
+                    <div class="reviewer-info">
+                        <h4 class="reviewer-name">Elena R.</h4>
+                        <span class="reviewer-tag">Italian University Admit</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">“</div>
+                    <p class="review-text">Incredible professionalism. Their test preparation tips and document review strategies saved me weeks of trial and error. Highly recommend their consultancy services.</p>
+                    <div class="reviewer-info">
+                        <h4 class="reviewer-name">Ahmed K.</h4>
+                        <span class="reviewer-tag">International Undergraduate</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Stream -->
-    <main class="main-layout">
-        <!-- Upgraded Premium Color Services Block -->
-        <section class="section-card">
-            <h2><i class="fa-solid fa-star"></i> Our Premium Services</h2>
-            <div class="service-grid">
-                <div class="service-row">
-                    <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <div class="service-info">
-                        <h3>University & Course Shortlisting</h3>
-                        <p>Perfect fit for your budget & academic goals.</p>
-                    </div>
-                </div>
-                <div class="service-row">
-                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
-                    <div class="service-info">
-                        <h3>Scholarship Search & Application Support</h3>
-                        <p>Maximizing funding opportunities across international boards.</p>
-                    </div>
-                </div>
-                <div class="service-row">
-                    <div class="service-icon"><i class="fa-solid fa-pen-to-square"></i></div>
-                    <div class="service-info">
-                        <h3>Admissions Application Assistance</h3>
-                        <p>Crafting winning personal statements, intent essays, and document packages.</p>
-                    </div>
-                </div>
-                <div class="service-row">
-                    <div class="service-icon"><i class="fa-solid fa-book-open"></i></div>
-                    <div class="service-info">
-                        <h3>Test Preparation Support</h3>
-                        <p>Expert coordination files for IELTS, TOEFL, GRE, GMAT, and SAT benchmarks.</p>
-                    </div>
-                </div>
-                <div class="service-row">
-                    <div class="service-icon"><i class="fa-solid fa-plane"></i></div>
-                    <div class="service-info">
-                        <h3>Visa Application & Travel Support</h3>
-                        <p>Seamless, worry-free structural guidance for legal transition streams.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Dynamic Side Panel Including Asia Strategy Matrix -->
-        <aside class="destination-panel">
-            <h2>Study In Your Dream Destination</h2>
-            <ul class="dest-list">
-                <li class="dest-item"><i class="fa-solid fa-building-columns"></i> United Kingdom</li>
-                <li class="dest-item"><i class="fa-solid fa-map"></i> Canada</li>
-                <li class="dest-item"><i class="fa-solid fa-flag-usa"></i> United States</li>
-                <!-- Asia Section Successfully Added -->
-                <li class="dest-item"><i class="fa-solid fa-earth-asia"></i> Asia (Japan, Malaysia, South Korea)</li>
-                <li class="dest-item"><i class="fa-solid fa-landmark"></i> Europe (Schengen Area)</li>
-                <li class="dest-item"><i class="fa-solid fa-earth-africa"></i> AND MANY MORE...</li>
-            </ul>
-        </aside>
-    </main>
-
-    <!-- Bottom Action Box -->
-    <section class="cta-card">
-        <h2>Empowering Your Future. Contact Us Now.</h2>
-        <p>Ready to initialize your file structure? Reach our advisory stream instantly.</p>
-        <a href="https://wa.me/2347073802685?text=Hello%20LightEra%2C%20I%20want%20to%20book%20a%20free%20consultation." class="action-button" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> Chat Live on WhatsApp
-        </a>
-    </section>
-
     <footer>
-        <p>&copy; 2026 LightEra International Admissions & Scholarships. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2026 LightEra International Admissions & Scholarships. All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>

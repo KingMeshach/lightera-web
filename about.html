@@ -3,134 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | LightEra International Guide</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root { --navy-deep: #061325; --navy-medium: #0B2240; --gold-primary: #D4AF37; --white: #FFFFFF; --slate-light: #F8FAFC; --text-main: #1E293B; --text-muted: #64748B; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--slate-light); color: var(--text-main); padding-top: 130px; }
-        
-        .top-mini-bar { background: #030a14; color: rgba(255,255,255,0.7); font-size: 0.8rem; padding: 8px 10%; display: flex; justify-content: space-between; position: fixed; top: 0; width: 100%; z-index: 1001; }
-        .main-navbar { background: rgba(6, 19, 37, 0.98); position: fixed; top: 33px; width: 100%; z-index: 1000; padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(212, 175, 55, 0.2); }
-        .brand-logo { color: var(--white); font-size: 1.6rem; font-weight: 800; text-decoration: none; }
-        .brand-logo span { color: var(--gold-primary); }
-        .nav-tabs { display: flex; gap: 30px; list-style: none; align-items: center; }
-        .nav-tabs a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.95rem; font-weight: 600; padding: 8px 4px; }
-        .nav-tabs a:hover, .nav-tabs a.active { color: var(--gold-primary); }
-        .portal-btn { background: linear-gradient(135deg, #E6C657 0%, var(--gold-primary) 100%); color: var(--navy-deep) !important; padding: 10px 24px !important; border-radius: 50px; font-weight: 700 !important; }
-
-        .about-header { background: var(--navy-deep); color: var(--white); padding: 60px 10%; text-align: center; }
-        .about-header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--gold-primary); }
-        
-        .about-container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
-        .intro-card { background: var(--white); padding: 40px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); margin-bottom: 40px; }
-        
-        /* Packages Grid Layout */
-        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px; margin-bottom: 50px; }
-        .package-card { background: var(--white); border: 1px solid #E2E8F0; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; position: relative; transition: transform 0.3s; }
-        .package-card:hover { transform: translateY(-5px); }
-        .package-card.premium { border: 2px solid var(--gold-primary); background: radial-gradient(circle at top right, #fff, rgba(212,175,55,0.05)); }
-        .package-badge { position: absolute; top: -12px; right: 20px; background: var(--gold-primary); color: var(--navy-deep); font-size: 0.75rem; font-weight: bold; padding: 4px 12px; border-radius: 20px; }
-        
-        .package-card h3 { font-size: 1.25rem; color: var(--navy-deep); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-        .package-card h3 i { color: var(--gold-primary); }
-        .package-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px; }
-        .package-footer { border-top: 1px dashed #E2E8F0; padding-top: 15px; font-weight: bold; color: var(--navy-medium); font-size: 0.95rem; }
-
-        /* Restored Portal Highlight Box */
-        .highlight-box { background: rgba(212, 175, 55, 0.08); border-left: 5px solid var(--gold-primary); padding: 30px; border-radius: 12px; margin: 40px 0; }
-        .highlight-box h3 { color: var(--navy-deep); margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
-        .highlight-box h3 i { color: var(--gold-primary); }
-
-        footer { background: var(--navy-deep); color: rgba(255, 255, 255, 0.4); text-align: center; padding: 30px; font-size: 0.85rem; margin-top: 60px; }
-    </style>
+    <title>About Us | LightEra</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="top-mini-bar">
-        <div><i class="fa-solid fa-graduation-cap"></i> Your Pathway to Global Education & Funding</div>
+
+    <div class="top-bar">
+        <div class="container">
+            <span class="tagline">Your Pathway to Global Education & Funding</span>
+            <div class="contact-group">
+                <span class="contact-item">🕒 Always Open</span>
+                <a href="mailto:info@lighteraedu.com" class="contact-item">✉️ info@lighteraedu.com</a>
+                <a href="https://wa.me/2347073802685" target="_blank" class="contact-item whatsapp">💬 Free Consultation: +234 707 380 2685</a>
+            </div>
+        </div>
     </div>
+
     <nav class="main-navbar">
-        <a href="index.html" class="brand-logo">LIGHTERA<span>.</span></a>
-        <ul class="nav-tabs">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About Us</a></li>
-            <li><a href="portal.html" class="portal-btn"><i class="fa-solid fa-user-shield"></i> Applicant's Portal</a></li>
-        </ul>
+        <div class="container">
+            <a href="index.html" class="brand-logo">LIGHT<span>ERA</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="portal.html">Applicant Portal</a></li>
+            </ul>
+        </div>
     </nav>
-    
-    <div class="about-header">
-        <h1>Our Service Ecosystem</h1>
-        <p>Flexible admission tiers and automated tracking scaled to support your unique structural needs.</p>
-    </div>
-    
-    <main class="about-container">
-        <div class="intro-card">
-            <h2>Who We Are</h2>
-            <p style="margin-top: 10px; color: var(--text-muted); line-height: 1.6;">LightEra International Admissions & Scholarships is an elite academic placement infrastructure built to guide aspiring international students toward global degrees and fully funded packages across the UK, Canada, the US, and Europe.</p>
-        </div>
 
-        <!-- RESTORED: APPLICATION TRACKING EXPLANATION BLOCK -->
-        <div class="highlight-box">
-            <h3><i class="fa-solid fa-laptop-code"></i> The LightEra Applicant Control System</h3>
-            <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
-                We believe that tracking your global future should not feel like chaotic guesswork. To prevent applicants from enduring long wait times or navigating cluttered messaging streams on WhatsApp, we developed our custom <strong>Applicant Console</strong> framework.
-            </p>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-main);">
-                <strong>1. Live Progress Tracking:</strong> Once we begin processing your files, you can log in at any moment to check the exact real-time tracking stage (Document Selection, Submitted, or Visa Stream) for each university you assigned to us.<br><br>
-                <strong>2. Automated School & Scholarship Selection:</strong> You do not need to wait for a chat reply to select your target tracks. Log directly into your profile terminal, choose from our list of open global scholarships and institutions, and click to alert our processing desk instantly.<br><br>
-                <strong>3. On-Demand Strategy Backups:</strong> If you are unsure which academic tracks or country guidelines match your grade tier, the system automatically routes you to book a strategic one-on-one consultation with our senior advisory desk.
-            </p>
-        </div>
-
-        <!-- PACKAGES SECTION -->
-        <h2 style="color: var(--navy-deep); text-align: center; margin-bottom: 10px; margin-top: 40px;">Explore Our Packages & Pricing Tiers</h2>
-        <p style="color: var(--text-muted); text-align: center; margin-bottom: 30px; font-size: 0.95rem;">Select the exact operational assistance file route required for your profile layout.</p>
-        
-        <div class="packages-grid">
+    <main class="content-block">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>LightEra International Admissions & Scholarships was founded to bridge the gap between brilliant students and elite global academic opportunities. We clean up the chaos of international admissions, rendering professional consultancy that guides applicants into premium ecosystems worldwide.</p>
             
-            <div class="package-card premium">
-                <div class="package-badge">Most Popular</div>
-                <div>
-                    <h3><i class="fa-solid fa-crown"></i> Full Premium Package</h3>
-                    <p>Complete end-to-end oversight. We manage your entire portfolio path: university profile building, multiple scholarship shortlists, essay review, documents application, and step-by-step visa processing.</p>
-                </div>
-                <div class="package-footer">Premium Managed Fee</div>
-            </div>
-
-            <div class="package-card">
-                <div>
-                    <h3><i class="fa-solid fa-shuffle"></i> Open Track Entry</h3>
-                    <p>Designed for flexibility. Our processing desk maps out and applies to different premium schools or available open scholarships that best align with your profiles.</p>
-                </div>
-                <div class="package-footer">Standard Selection Fee</div>
-            </div>
-
-            <div class="package-card">
-                <div>
-                    <h3><i class="fa-solid fa-bullseye"></i> Specific Track Target</h3>
-                    <p>Have your ideal target schools already planned out? We manage the precision filing and strict application steps for your explicitly chosen list of schools and scholarships.</p>
-                </div>
-                <div class="package-footer">Target Processing Fee</div>
-            </div>
-
-            <div class="package-card">
-                <div>
-                    <h3><i class="fa-solid fa-passport"></i> Solo Visa Processing</h3>
-                    <p>Already secured an admission offer on your own? We step in exclusively to build, review, and lock in your legal traveling visa structural profile documentation.</p>
-                </div>
-                <div class="package-footer">Visa Consultation Fee</div>
-            </div>
-
-            <div class="package-card">
-                <div>
-                    <h3><i class="fa-solid fa-file-invoice"></i> Standard Test Voucher</h3>
-                    <p>Direct registration assistance for IELTS, TOEFL, GRE, GMAT, or SAT exams without additional consulting overhead.</p>
-                </div>
-                <div class="package-footer">Standard Registration Fee</div>
-            </div>
-
+            <h2>Core Offerings</h2>
+            <p>We specialized in elite workflows for international undergraduate pathways, strategic scholarship packaging (including MEXT, GKS, and European institutional funding), strict document certification auditing, and intensive visa presentation preparation.</p>
         </div>
     </main>
-    <footer><p>&copy; 2026 LightEra International Admissions & Scholarships.</p></footer>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LightEra International Admissions & Scholarships. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
