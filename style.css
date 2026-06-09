@@ -5,6 +5,10 @@
     --gold-hover: #b8922f;
     --text-light: #e2e8f0;
     --text-muted: #b0c4de;
+    /* Elegant soft off-white for visual contrast */
+    --bg-soft-light: #f8fafc;
+    --text-dark: #0f172a;
+    --text-dark-muted: #475569;
 }
 
 * {
@@ -26,11 +30,14 @@ body {
     padding: 0 20px;
 }
 
-/* ================= NAV BAR WITH INTEGRATED DATA ================= */
+/* ================= COMPACT MAIN NAVBAR ================= */
 .main-navbar {
-    padding: 20px 0;
+    padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    background-color: rgba(3, 10, 20, 0.9);
+    background-color: rgba(3, 10, 20, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .main-navbar .container {
@@ -45,7 +52,7 @@ body {
 }
 
 .brand-logo {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 800;
     color: #ffffff;
     text-decoration: none;
@@ -57,7 +64,7 @@ body {
 }
 
 .brand-tagline {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -67,12 +74,12 @@ body {
 .nav-right-group {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 25px;
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     list-style: none;
     align-items: center;
 }
@@ -81,7 +88,7 @@ body {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
@@ -89,21 +96,20 @@ body {
     color: var(--gold-primary);
 }
 
-/* WhatsApp Interactive Action Button */
+/* Compact Green WhatsApp Button */
 .nav-chat-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     background-color: #25d366;
     color: #ffffff !important;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: transform 0.2s ease, background-color 0.2s ease;
-    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
 }
 
 .nav-chat-btn:hover {
@@ -123,9 +129,9 @@ body {
     color: #ffffff;
 }
 
-/* ================= HERO AREA ================= */
+/* ================= HERO CONTENT AREA ================= */
 .hero-section {
-    padding: 80px 0 60px 0;
+    padding: 60px 0;
     text-align: center;
 }
 
@@ -134,21 +140,21 @@ body {
     align-items: center;
     gap: 8px;
     border: 1px solid var(--gold-primary);
-    padding: 10px 24px;
+    padding: 8px 20px;
     border-radius: 50px;
     color: var(--gold-primary);
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     background: rgba(212, 175, 55, 0.05);
 }
 
 .hero-section h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     letter-spacing: -0.5px;
 }
 
@@ -157,43 +163,35 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--text-light);
     max-width: 750px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 30px auto;
 }
 
-.cta-btn {
-    display: inline-block;
-    background-color: var(--gold-primary);
-    color: #000000;
-    text-decoration: none;
-    padding: 16px 36px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
-}
-
-.cta-btn:hover {
-    background-color: var(--gold-hover);
-    transform: translateY(-2px);
-}
-
-/* Promotional Flyer Integration */
+/* Restored Flyer Styling */
 .hero-graphic {
-    margin-top: 50px;
-    border-radius: 16px;
+    margin-top: 40px;
+    border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.1);
     max-width: 100%;
+    max-height: 550px;
+    object-fit: contain;
     height: auto;
 }
 
-/* ================= SECTIONS & GRIDS ================= */
-.content-block {
+/* ================= DARK AND LIGHT CONTENT BLOCKS ================= */
+.content-block-dark {
     padding: 80px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--bg-deep-blue);
+    color: #ffffff;
+}
+
+/* Restored Soft Off-White Background Block */
+.content-block-light {
+    padding: 80px 0;
+    background-color: var(--bg-soft-light);
+    color: var(--text-dark);
 }
 
 .section-title-block {
@@ -202,18 +200,21 @@ body {
 }
 
 .section-title-block h2 {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    margin-bottom: 15px;
-    color: #ffffff;
+    margin-bottom: 12px;
 }
+
+.content-block-dark .section-title-block h2 { color: #ffffff; }
+.content-block-light .section-title-block h2 { color: var(--text-dark); }
 
 .section-title-block p {
-    color: var(--text-muted);
     font-size: 1.1rem;
 }
+.content-block-dark .section-title-block p { color: var(--text-muted); }
+.content-block-light .section-title-block p { color: var(--text-dark-muted); }
 
-/* Side-by-Side Dual Row Layout */
+/* Layout Grid Layouts */
 .dual-layout-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -221,44 +222,48 @@ body {
 }
 
 .layout-column h3 {
-    font-size: 1.6rem;
-    color: var(--gold-primary);
-    margin-bottom: 25px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
     border-left: 4px solid var(--gold-primary);
     padding-left: 12px;
 }
+.content-block-dark .layout-column h3 { color: var(--gold-primary); }
+.content-block-light .layout-column h3 { color: var(--bg-deep-blue); }
 
-/* Simplified Cards */
+/* Information Card Modules */
 .info-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
     padding: 25px;
     border-radius: 12px;
     margin-bottom: 20px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.info-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--gold-primary);
+.content-block-dark .info-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.content-block-light .info-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .info-card h4 {
-    font-size: 1.25rem;
-    color: #ffffff;
+    font-size: 1.2rem;
     margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
+.content-block-dark .info-card h4 { color: #ffffff; }
+.content-block-light .info-card h4 { color: var(--bg-deep-blue); }
 
 .info-card p {
-    color: var(--text-light);
     font-size: 0.95rem;
     line-height: 1.6;
 }
+.content-block-dark .info-card p { color: var(--text-light); }
+.content-block-light .info-card p { color: var(--text-dark-muted); }
 
-/* Tracking Timeline Blocks */
+/* Timeline Modules */
 .tracking-timeline {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -266,15 +271,17 @@ body {
 }
 
 .timeline-box {
-    background: rgba(255, 255, 255, 0.01);
     border-left: 3px solid var(--gold-primary);
     padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .timeline-box .step-num {
     font-size: 1.8rem;
     font-weight: 900;
-    color: rgba(214, 175, 55, 0.25);
+    color: rgba(214, 175, 55, 0.3);
     margin-bottom: 5px;
 }
 
@@ -289,7 +296,90 @@ body {
     font-size: 0.9rem;
 }
 
-/* ================= 5-STAR REVIEWS WIDGET ================= */
+/* ================= INTERACTIVE WORKSPACE PORTAL FORMS ================= */
+.auth-container {
+    max-width: 480px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 25px;
+}
+
+.auth-tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 12px;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-align: center;
+}
+
+.auth-tab-btn.active {
+    color: var(--gold-primary);
+    border-bottom: 2px solid var(--gold-primary);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(3, 10, 20, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--gold-primary);
+}
+
+.submit-form-btn {
+    width: 100%;
+    background: var(--gold-primary);
+    color: #000000;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.submit-form-btn:hover {
+    background-color: var(--gold-hover);
+}
+
+/* ================= REVIEWS WIDGET ================= */
 .reviews-summary-section {
     padding: 60px 0;
     background-color: rgba(4, 13, 26, 0.5);
@@ -334,36 +424,76 @@ footer {
     font-size: 0.95rem;
 }
 
-/* ================= MOBILE PATCH ================= */
+/* ================= 📱 RE-ENGINEERED COMPACT MOBILE VIEW PATCH ================= */
 @media (max-width: 992px) {
+    .main-navbar {
+        padding: 10px 0;
+    }
+    
     .main-navbar .container {
         flex-direction: column;
-        gap: 20px;
+        gap: 12px;
         text-align: center;
     }
+
+    .brand-logo {
+        font-size: 1.4rem;
+    }
+
+    .brand-tagline {
+        font-size: 0.65rem;
+    }
+
     .nav-right-group {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         width: 100%;
     }
+
+    /* Standardizes link rows into a sleek line */
     .nav-links {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
         gap: 15px;
+        flex-wrap: wrap;
     }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Scales back button swelling on screens */
+    .nav-chat-btn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
     .nav-email-text {
         border-left: none;
         padding-left: 0;
+        font-size: 0.8rem;
+        margin-top: -2px;
     }
 }
 
 @media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+
     .hero-section h1 {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
     }
+
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
+
     .section-title-block h2 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+    }
+
+    .dual-layout-grid, .tracking-timeline {
+        grid-template-columns: 1fr;
     }
 }
