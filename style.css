@@ -26,7 +26,7 @@ body {
     padding: 0 20px;
 }
 
-/* ================= NEW INTEGRATED NAVIGATION BAR ================= */
+/* ================= NAV BAR WITH INTEGRATED DATA ================= */
 .main-navbar {
     padding: 20px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -67,13 +67,14 @@ body {
 .nav-right-group {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 35px;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     list-style: none;
+    align-items: center;
 }
 
 .nav-links a {
@@ -88,28 +89,41 @@ body {
     color: var(--gold-primary);
 }
 
-.nav-contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 2px;
-    font-size: 0.85rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-    padding-left: 20px;
-}
-
-.nav-contact-info a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.nav-contact-info .whatsapp-link {
-    color: #25d366;
+/* WhatsApp Interactive Action Button */
+.nav-chat-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25d366;
+    color: #ffffff !important;
+    padding: 10px 20px;
+    border-radius: 50px;
     font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
 }
 
-/* ================= HERO CONTENT SECTION ================= */
+.nav-chat-btn:hover {
+    background-color: #20ba5a;
+    transform: translateY(-1px);
+}
+
+.nav-email-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 15px;
+}
+
+.nav-email-text:hover {
+    color: #ffffff;
+}
+
+/* ================= HERO AREA ================= */
 .hero-section {
     padding: 80px 0 60px 0;
     text-align: center;
@@ -167,6 +181,7 @@ body {
     transform: translateY(-2px);
 }
 
+/* Promotional Flyer Integration */
 .hero-graphic {
     margin-top: 50px;
     border-radius: 16px;
@@ -175,45 +190,106 @@ body {
     height: auto;
 }
 
-/* ================= BUSINESS SECTIONS (ABOUT / PACKAGES) ================= */
+/* ================= SECTIONS & GRIDS ================= */
 .content-block {
-    padding: 60px 0;
+    padding: 80px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.content-block h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+.section-title-block {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title-block h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
     color: #ffffff;
-    border-bottom: 2px solid var(--gold-primary);
-    display: inline-block;
-    padding-bottom: 5px;
 }
 
-.content-block h3 {
-    font-size: 1.5rem;
+.section-title-block p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Side-by-Side Dual Row Layout */
+.dual-layout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.layout-column h3 {
+    font-size: 1.6rem;
     color: var(--gold-primary);
-    margin: 25px 0 10px 0;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--gold-primary);
+    padding-left: 12px;
 }
 
-.content-block p {
-    color: var(--text-light);
-    font-size: 1.1rem;
+/* Simplified Cards */
+.info-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 25px;
+    border-radius: 12px;
     margin-bottom: 20px;
-    max-width: 900px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.content-list {
-    margin-left: 20px;
-    margin-bottom: 30px;
+.info-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--gold-primary);
+}
+
+.info-card h4 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-card p {
     color: var(--text-light);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-.content-list li {
-    margin-bottom: 10px;
+/* Tracking Timeline Blocks */
+.tracking-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
 }
 
-/* ================= REAL 5-STAR REVIEWS WIDGET ================= */
+.timeline-box {
+    background: rgba(255, 255, 255, 0.01);
+    border-left: 3px solid var(--gold-primary);
+    padding: 20px;
+}
+
+.timeline-box .step-num {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: rgba(214, 175, 55, 0.25);
+    margin-bottom: 5px;
+}
+
+.timeline-box h4 {
+    font-size: 1.15rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.timeline-box p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ================= 5-STAR REVIEWS WIDGET ================= */
 .reviews-summary-section {
     padding: 60px 0;
     background-color: rgba(4, 13, 26, 0.5);
@@ -227,7 +303,7 @@ body {
     padding: 40px;
     border-radius: 16px;
     display: inline-block;
-    max-width: 500px;
+    max-width: 520px;
     width: 100%;
 }
 
@@ -258,40 +334,36 @@ footer {
     font-size: 0.95rem;
 }
 
-/* ================= RESPONSIVE DESIGN ================= */
+/* ================= MOBILE PATCH ================= */
 @media (max-width: 992px) {
     .main-navbar .container {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-    
     .nav-right-group {
         flex-direction: column;
         gap: 15px;
+        width: 100%;
     }
-    
-    .nav-contact-info {
-        align-items: center;
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-email-text {
         border-left: none;
         padding-left: 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 10px;
-        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        gap: 12px;
-    }
-
     .hero-section h1 {
         font-size: 2.2rem;
     }
-
     .hero-subtitle {
         font-size: 1.1rem;
+    }
+    .section-title-block h2 {
+        font-size: 1.8rem;
     }
 }
