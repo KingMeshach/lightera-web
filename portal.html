@@ -18,75 +18,122 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="portal.html" class="active">Portal</a></li>
                 </ul>
                 <a href="portal.html" class="nav-action-btn btn-portal">🔑 Portal</a>
                 <a href="https://wa.me/2347073802685" target="_blank" class="nav-action-btn btn-whatsapp">💬 WhatsApp</a>
-                <a href="mailto:info@lighteraedu.com" class="nav-email-text">✉️ info@lighteraedu.com</a>
             </div>
         </div>
     </nav>
 
     <main class="content-block-dark">
         <div class="container">
-            <div class="section-title-block">
-                <h2>Applicant Processing Hub</h2>
-                <p>Register or log into your central dashboard to track your live application stages in real-time.</p>
-            </div>
-
-            <div class="auth-container">
-                <div class="auth-tabs">
-                    <button class="auth-tab-btn active" onclick="toggleAuth('register')">Create Account</button>
-                    <button class="auth-tab-btn" onclick="toggleAuth('login')">Sign In</button>
+            
+            <!-- SECTION A: AUTHENTICATION INTERFACE (Hidden after login) -->
+            <div id="auth-view">
+                <div class="section-title-block">
+                    <h2>Applicant Processing Hub</h2>
+                    <p>Register or log into your central dashboard to track your live application stages in real-time.</p>
                 </div>
 
-                <form id="register-form" onsubmit="event.preventDefault(); alert('Account successfully initialized. LightEra verification processing token active.');">
-                    <div class="form-group">
-                        <label>Full Legal Name</label>
-                        <input type="text" placeholder="John Doe" required>
+                <div class="auth-container">
+                    <div class="auth-tabs">
+                        <button class="auth-tab-btn active" onclick="toggleAuth('register')">Create Account</button>
+                        <button class="auth-tab-btn" onclick="toggleAuth('login')">Sign In</button>
                     </div>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="example@domain.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Select Your Target Pathway</label>
-                        <select required>
-                            <option value="">-- Choose Your Track --</option>
-                            <option value="asia">Asian Pathway (MEXT / GKS / CSC / Malaysia)</option>
-                            <option value="europe">European Pathway (Italy / Germany / Romania)</option>
-                            <option value="na">North American Pathway (USA / Canada)</option>
-                            <option value="exam">Exam Registration Only (IELTS / Others)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" placeholder="••••••••" required>
-                    </div>
-                    <button type="submit" class="submit-form-btn">Initialize Registration</button>
-                </form>
 
-                <form id="login-form" style="display: none;" onsubmit="event.preventDefault(); alert('Dashboard profile synchronization successful.');">
-                    <div class="form-group">
-                        <label>Applicant Email</label>
-                        <input type="email" placeholder="example@domain.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" placeholder="••••••••" required>
-                    </div>
-                    <button type="submit" class="submit-form-btn">Access Workspace</button>
-                </form>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label>Full Legal Name</label>
+                            <input type="text" id="reg-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="reg-email" placeholder="example@domain.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Select Your Target Pathway</label>
+                            <select id="reg-pathway" required>
+                                <option value="">-- Choose Your Track --</option>
+                                <option value="Asian Pathway">Asian Pathway (MEXT / GKS / CSC)</option>
+                                <option value="European Pathway">European Pathway (Italy / Germany)</option>
+                                <option value="North American Pathway">North American Pathway (USA / Canada)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="reg-password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="submit-form-btn">Initialize Registration</button>
+                    </form>
+
+                    <form id="login-form" style="display: none;">
+                        <div class="form-group">
+                            <label>Applicant Email</label>
+                            <input type="email" id="login-email" placeholder="example@domain.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="login-password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="submit-form-btn">Access Workspace</button>
+                    </form>
+                </div>
             </div>
+
+            <!-- SECTION B: THE INTERNAL APPLICANT DASHBOARD (Visible only after successful login) -->
+            <div id="dashboard-view" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px;">
+                    <div>
+                        <h2 style="font-size: 2rem; color: #ffffff;">Welcome Back, <span id="user-display-name" style="color: var(--gold-primary);">Applicant</span></h2>
+                        <p style="color: var(--text-muted); margin-top: 5px;">Track ID: <span id="user-display-id" style="font-family: monospace; color: #ffffff;">LT-XXXX</span></p>
+                    </div>
+                    <button onclick="logout()" class="nav-action-btn" style="background-color: #ef4444; border: none; cursor: pointer;">🔒 Log Out</button>
+                </div>
+
+                <div class="dual-layout-grid">
+                    <!-- Left Column: Assigned Pathway Overview -->
+                    <div class="layout-column">
+                        <h3>Your Track Information</h3>
+                        <div class="info-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
+                            <h4 style="color: var(--gold-primary); margin-bottom: 10px;">Registered Program</h4>
+                            <p id="user-display-pathway" style="font-size: 1.1rem; font-weight: 700; color: #ffffff;">Loading details...</p>
+                        </div>
+                        <div class="info-card" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
+                            <h4>💡 Next Milestone Requirement</h4>
+                            <p>Ensure all your standard high school/university transcripts and graduation certificates are uploaded or sent directly to our operations email address for verification checking.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Live Progress Stage Status Indicator -->
+                    <div class="layout-column">
+                        <h3>Live Stage Tracking</h3>
+                        <div class="info-card" style="background: rgba(3, 10, 20, 0.6); border: 2px solid var(--gold-primary);">
+                            <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--gold-primary); font-weight: bold; margin-bottom: 5px;">Current Application File Status</p>
+                            <h4 id="user-display-status" style="font-size: 1.4rem; color: #ffffff;">01 — Free Consultation Stage</h4>
+                            <p style="margin-top: 8px; color: var(--text-muted);">Our administrative team is actively reviewing your academic credentials against target scholarship guidelines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LightEra International Admissions & Scholarships. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Frontend Backend Bridge Script Integration -->
     <script>
+        // Adjust the URL to your live hosted backend server later (e.g., https://api.lighteraedu.com)
+        const BACKEND_URL = 'http://localhost:5000/api';
+
         function toggleAuth(type) {
             const regForm = document.getElementById('register-form');
             const loginForm = document.getElementById('login-form');
             const tabs = document.querySelectorAll('.auth-tab-btn');
-            
             if (type === 'register') {
                 regForm.style.display = 'block';
                 loginForm.style.display = 'none';
@@ -99,13 +146,92 @@
                 tabs[1].classList.add('active');
             }
         }
+
+        // --- SUBMIT REGISTRATION DATA TO BACKEND ---
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const pathway = document.getElementById('reg-pathway').value;
+            const password = document.getElementById('reg-password').value;
+
+            try {
+                const response = await fetch(`${BACKEND_URL}/auth/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, pathway, password })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    alert('Registration Successful! Please sign in.');
+                    toggleAuth('login');
+                } else {
+                    alert(data.message || 'An error occurred during registration.');
+                }
+            } catch (err) {
+                alert('Cannot connect to LightEra backend engine right now.');
+            }
+        });
+
+        // --- SUBMIT LOGIN DATA & INITIALIZE DASHBOARD ---
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            try {
+                const response = await fetch(`${BACKEND_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    // Save secure login token to browser storage
+                    localStorage.setItem('token', data.token);
+                    showDashboard(data.user);
+                } else {
+                    alert(data.message || 'Invalid login details.');
+                }
+            } catch (err) {
+                alert('Authentication system connection offline.');
+            }
+        });
+
+        function showDashboard(user) {
+            document.getElementById('auth-view').style.display = 'none';
+            document.getElementById('dashboard-view').style.display = 'block';
+            
+            document.getElementById('user-display-name').innerText = user.name;
+            document.getElementById('user-display-id').innerText = `LT-${user._id.substring(0,6).toUpperCase()}`;
+            document.getElementById('user-display-pathway').innerText = user.pathway;
+            document.getElementById('user-display-status').innerText = user.status || "01 — Free Consultation Stage";
+        }
+
+        function logout() {
+            localStorage.removeItem('token');
+            window.location.reload();
+        }
+
+        // Automatic Token Autologin Check on Page Load
+        window.addEventListener('DOMContentLoaded', async () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                try {
+                    const response = await fetch(`${BACKEND_URL}/auth/me`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    const data = await response.json();
+                    if (response.ok) {
+                        showDashboard(data.user);
+                    } else {
+                        localStorage.removeItem('token');
+                    }
+                } catch (e) {
+                    console.log('Autologin bypass inactive.');
+                }
+            }
+        });
     </script>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 LightEra International Admissions & Scholarships. All Rights Reserved.</p>
-        </div>
-    </footer>
-
 </body>
 </html>
